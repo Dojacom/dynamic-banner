@@ -1,13 +1,6 @@
 // src/components/DynamicBanner.jsx
 import React, { useState } from "react";
 
-const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-React.useEffect(() => {
-  const handleResize = () => setIsMobile(window.innerWidth < 768);
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
 
 const DynamicBanner = () => {
   const [title, setTitle] = useState("");
@@ -27,7 +20,7 @@ const DynamicBanner = () => {
   };
 
   return (
-    <div style={{ padding: "40px", alignItems: "center" ,margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", }}>
+    <div style={{ padding: "40px", alignItems: "center" ,margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", }}>
       {/* Banner Display */}
       <section
         style={{
